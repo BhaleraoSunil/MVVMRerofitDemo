@@ -22,7 +22,7 @@ class QuoteApplication:Application() {
 
         val database = QuoteDatabase.getDatabase(applicationContext)
 
-        respository =  QuoteRepository(quoteService,database)
+        respository =  QuoteRepository(quoteService,database, appContext = applicationContext)
 
     }
 }

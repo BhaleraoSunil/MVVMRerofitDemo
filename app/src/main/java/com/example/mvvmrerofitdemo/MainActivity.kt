@@ -3,6 +3,7 @@ package com.example.mvvmrerofitdemo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.mvvmrerofitdemo.api.QuoteService
 import com.example.mvvmrerofitdemo.api.RetrofitHelper
@@ -25,7 +26,9 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProvider(this, MainViewModelFactory(respository)).get(MainViewModel::class.java)
 
         mainViewModel.quotes.observe(this, {
-           Log.e(javaClass.name,"quotes---> ${it.results.toString()}")
+
+           Log.e(javaClass.name,"quotes size---> ${it.results.size}")
+            Log.e(javaClass.name,"quotes---> ${it.results.toString()}")
         })
     }
 }
